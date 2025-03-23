@@ -1,6 +1,6 @@
 import Link from "next/link"
-import Image from "next/image"
 import type { ReactNode } from "react"
+import { SiteHeader } from "@/components/site-header"
 
 interface LayoutWrapperProps {
   children: ReactNode
@@ -11,28 +11,7 @@ interface LayoutWrapperProps {
 export function LayoutWrapper({ children, title, subtitle }: LayoutWrapperProps) {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="bg-[#ff5c39] py-2 sticky top-0 z-10 shadow-sm">
-        <div className="container mx-auto px-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center">
-            <Image src="/logo.svg" alt="TypeIt Logo" width={60} height={40} className="mr-2" />
-            <span className="text-white font-medium hidden sm:inline">TypeIt</span>
-          </Link>
-          <nav className="hidden md:flex space-x-4">
-            <Link href="/languages" className="text-white hover:text-white/80">
-              Languages
-            </Link>
-            <Link href="/math" className="text-white hover:text-white/80">
-              Math
-            </Link>
-            <Link href="/symbols" className="text-white hover:text-white/80">
-              Symbols
-            </Link>
-            <Link href="/ipa" className="text-white hover:text-white/80">
-              IPA
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="flex-1 py-6 md:py-8">
         <div className="container mx-auto px-4">
