@@ -1,101 +1,147 @@
-import Image from "next/image";
+import type { Metadata } from "next"
+import Link from "next/link"
+import Image from "next/image"
+import { ToolCard } from "@/components/tool-card"
+import { FeaturesList } from "@/components/features-list"
+
+export const metadata: Metadata = {
+  title: "TypeIt - Type special characters and symbols online",
+  description:
+    "An online tool to type accent marks, diacritics, mathematical symbols, and special characters from various languages",
+  keywords: "special characters, accent marks, diacritics, mathematical symbols, online keyboard, typing tool",
+}
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="flex min-h-screen flex-col">
+      <header className="bg-[#ff5c39] py-3 shadow-sm">
+        <div className="container mx-auto px-4 flex items-center justify-between">
+          <div className="flex items-center">
+            <Image src="/logo.svg" alt="TypeIt Logo" width={60} height={40} className="mr-2" />
+            <span className="text-white font-medium hidden sm:inline">TypeIt</span>
+          </div>
+          <nav className="hidden md:flex space-x-4">
+            <Link href="/languages" className="text-white hover:text-white/80">
+              Languages
+            </Link>
+            <Link href="/math" className="text-white hover:text-white/80">
+              Math
+            </Link>
+            <Link href="/symbols" className="text-white hover:text-white/80">
+              Symbols
+            </Link>
+            <Link href="/ipa" className="text-white hover:text-white/80">
+              IPA
+            </Link>
+          </nav>
+        </div>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <main className="flex-1 py-8">
+        <div className="container mx-auto px-4 flex flex-col items-center">
+          <div className="mb-8 text-center">
+            <div className="inline-block mb-4">
+              <Image src="/logo.svg" alt="TypeIt Logo" width={120} height={80} className="mx-auto" />
+            </div>
+            <h1 className="text-xl md:text-2xl text-[#2a6496] font-medium mb-4">
+              Type special characters and symbols online
+            </h1>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Choose from our collection of specialized typing tools for different languages, mathematical symbols, and
+              special characters.
+            </p>
+          </div>
+
+          <div className="w-full max-w-5xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-12">
+              <ToolCard
+                title="Math Symbols"
+                description="Type mathematical symbols, equations, and formulas"
+                icon="function"
+                href="/math"
+              />
+              <ToolCard
+                title="Symbols"
+                description="Type various symbols and special characters"
+                icon="symbols"
+                href="/symbols"
+              />
+              <ToolCard
+                title="Currencies"
+                description="Type currency symbols from around the world"
+                icon="currency"
+                href="/currencies"
+              />
+              <ToolCard
+                title="Phonetics (IPA)"
+                description="Type International Phonetic Alphabet symbols"
+                icon="sound"
+                href="/ipa"
+              />
+              <ToolCard title="Emoji" description="Type emoji and emoticons" icon="emoji" href="/emoji" />
+              <ToolCard
+                title="Languages"
+                description="Type accent marks and diacritics for various languages"
+                icon="languages"
+                href="/languages"
+              />
+            </div>
+
+            <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+              <div className="flex-1 bg-white p-6 rounded-lg border shadow-sm">
+                <h2 className="text-xl font-semibold mb-4">About TypeIt</h2>
+                <p className="text-gray-700 mb-4">
+                  TypeIt is a free online tool that helps you type special characters, symbols, and diacritics without
+                  installing any software. Whether you need to type in a foreign language, create mathematical
+                  equations, or use special symbols, TypeIt makes it easy.
+                </p>
+                <p className="text-gray-700">
+                  Simply choose the tool you need, click on the characters you want to use, and copy your text to use it
+                  anywhere. Your text is automatically saved, so you won't lose your work.
+                </p>
+              </div>
+
+              <div className="md:w-64 lg:w-80">
+                <FeaturesList />
+              </div>
+            </div>
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="py-6 md:py-8 text-center text-sm text-gray-600 border-t mt-8 md:mt-12">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-center space-x-2 mb-4">
+            <button className="bg-[#3b5998] text-white px-3 py-1 rounded flex items-center space-x-1">
+              <span>Share</span>
+            </button>
+            <button className="bg-[#1da1f2] text-white px-3 py-1 rounded flex items-center space-x-1">
+              <span>Tweet</span>
+            </button>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-x-2 gap-y-1">
+            <Link href="/about" className="text-[#2a6496] underline">
+              about this site
+            </Link>
+            <span className="hidden sm:inline">•</span>
+            <Link href="/help" className="text-[#2a6496] underline">
+              help
+            </Link>
+            <span className="hidden sm:inline">•</span>
+            <Link href="/app" className="text-[#2a6496] underline">
+              Windows app
+            </Link>
+            <span className="hidden sm:inline">•</span>
+            <Link href="/donate" className="text-[#2a6496] underline">
+              donate
+            </Link>
+          </div>
+
+          <div className="mt-4">© 2023 TypeIt Clone</div>
+        </div>
       </footer>
     </div>
-  );
+  )
 }
+
