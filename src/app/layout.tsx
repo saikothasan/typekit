@@ -29,7 +29,7 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://typeit-clone.vercel.app"),
+  metadataBase: new URL("https://typekit.pages.dev"),
   alternates: {
     canonical: "/",
   },
@@ -37,16 +37,25 @@ export const metadata = {
     title: "TypeIt - Type special characters and symbols online",
     description:
       "An online tool to type accent marks, diacritics, mathematical symbols, and special characters from various languages",
-    url: "https://typeit-clone.vercel.app",
+    url: "https://typekit.pages.dev",
     siteName: "TypeIt",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/equal-greater-than-symbol_3032296.png",
+        width: 512,
+        height: 512,
+        alt: "TypeIt Logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "TypeIt - Type special characters and symbols online",
     description:
       "An online tool to type accent marks, diacritics, mathematical symbols, and special characters from various languages",
+    images: ["/equal-greater-than-symbol_3032296.png"],
   },
   robots: {
     index: true,
@@ -60,12 +69,35 @@ export const metadata = {
     },
   },
   verification: {
-    google: "YOUR_GOOGLE_SITE_VERIFICATION_ID",
+    google: "1YvWzwVeCxXiSbtPL-G-q3YaxQVQ5_aZYl6y3Ht3yxM",
     yandex: "YOUR_YANDEX_VERIFICATION_ID",
     yahoo: "YOUR_YAHOO_VERIFICATION_ID",
     other: {
       me: ["YOUR_EMAIL_OR_LINK"],
     },
+  },
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    other: [
+      {
+        rel: "manifest",
+        url: "/site.webmanifest",
+      },
+    ],
+  },
+  manifest: "/site.webmanifest",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ff5c39" },
+    { media: "(prefers-color-scheme: dark)", color: "#ff5c39" },
+  ],
+  appleWebApp: {
+    title: "TypeIt",
+    statusBarStyle: "black-translucent",
   },
 }
 
@@ -78,13 +110,13 @@ export default function RootLayout({
     <html lang="en">
       <head>
         {/* Google Analytics */}
-        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" />
+        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-54KXP338MC" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX');
+            gtag('config', 'G-54KXP338MC');
           `}
         </Script>
       </head>
