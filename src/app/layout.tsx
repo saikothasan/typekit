@@ -73,7 +73,7 @@ export const metadata = {
     yandex: "YOUR_YANDEX_VERIFICATION_ID",
     yahoo: "YOUR_YAHOO_VERIFICATION_ID",
     other: {
-      me: ["YOUR_EMAIL_OR_LINK"],
+      me: ["https://shhdev.web.app"],
     },
   },
   icons: {
