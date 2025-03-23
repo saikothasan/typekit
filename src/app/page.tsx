@@ -3,6 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ToolCard } from "@/components/tool-card"
 import { FeaturesList } from "@/components/features-list"
+import { SiteHeader } from "@/components/site-header"
 
 export const metadata: Metadata = {
   title: "TypeIt - Type special characters and symbols online",
@@ -14,28 +15,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="bg-[#ff5c39] py-3 shadow-sm">
-        <div className="container mx-auto px-4 flex items-center justify-between">
-          <div className="flex items-center">
-            <Image src="/logo.svg" alt="TypeIt Logo" width={60} height={40} className="mr-2" />
-            <span className="text-white font-medium hidden sm:inline">TypeIt</span>
-          </div>
-          <nav className="hidden md:flex space-x-4">
-            <Link href="/languages" className="text-white hover:text-white/80">
-              Languages
-            </Link>
-            <Link href="/math" className="text-white hover:text-white/80">
-              Math
-            </Link>
-            <Link href="/symbols" className="text-white hover:text-white/80">
-              Symbols
-            </Link>
-            <Link href="/ipa" className="text-white hover:text-white/80">
-              IPA
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="flex-1 py-8">
         <div className="container mx-auto px-4 flex flex-col items-center">
